@@ -9,3 +9,5 @@ commands:
     description: Shows the player's madencoin amount.
   madencoin:
     description: Main command of plugin.
+    aliases:
+      - 'mcoin'

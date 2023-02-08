@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Objects;
 
 import me.t3sl4.cac.CustomAreaCoin;
+import me.t3sl4.cac.market.Market;
 import me.t3sl4.cac.onay.OnayMenuItems;
 import org.bukkit.Bukkit;
 
@@ -36,6 +37,7 @@ public class MessageUtil {
     public static String INFO_LINE_7;
     public static String INFO_LINE_8;
     public static String INFO_LINE_9;
+    public static String INFO_LINE_10;
     public static String TEKSEFERLIK_KOMUT;
     public static int ONAY_ISTEME_SURESI;
     public static String ONAY_MENU_TITLE;
@@ -46,6 +48,8 @@ public class MessageUtil {
     public static String PURGE;
 
     public static ArrayList<OnayMenuItems> ITEMS = new ArrayList<>();
+
+    public static ArrayList<Market> MARKETITEMS = new ArrayList<>();
 
     static SettingsManager manager = SettingsManager.getInstance();
 
@@ -81,15 +85,69 @@ public class MessageUtil {
         INFO_LINE_7 = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("INFO_LINE_7"));
         INFO_LINE_8 = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("INFO_LINE_8"));
         INFO_LINE_9 = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("INFO_LINE_9"));
+        INFO_LINE_10 = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("INFO_LINE_10"));
         CMD_NEW = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("CMD_NEW"));
         GONDER = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("GONDER"));
         GIVEALL = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("GIVEALL"));
         PURGE = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("PURGE"));
         ArrayList<OnayMenuItems> test = new ArrayList<>();
-        for (int i = 0; i < 9; i++)
+        ArrayList<Market> test2 = new ArrayList<>();
+
+        for (int i = 0; i < 9; i++) {
             test.add(new OnayMenuItems());
+        }
         for (String s : manager.onaymenusu.getConfigurationSection("").getKeys(false)) {
             if (!Objects.equals(s, "menuismi")) {
+                int j = 298;
+                try {
+                    j = Integer.parseInt(s);
+                } catch (Exception e) {
+                    Bukkit.getConsoleSender().sendMessage(CustomAreaCoin.chatcolor("&4Onay Menu Hata!"));
+                    return;
+                }
+                if (manager.onaymenusu.getConfig().get(j + ".item") != null &&
+                        manager.onaymenusu.getConfig().get(j + ".tiklayinca") != null &&
+                        manager.onaymenusu.getConfig().get(j + ".lore") != null &&
+                        manager.onaymenusu.getConfig().get(j + ".isim") != null) {
+                    String item = manager.onaymenusu.getConfig().getString(j + ".item");
+                    String tiklayinca = manager.onaymenusu.getConfig().getString(j + ".tiklayinca");
+                    List<String> lore = manager.onaymenusu.getConfig().getStringList(j + ".lore");
+                    String isim = manager.onaymenusu.getConfig().getString(j + ".isim");
+                    String[] a = item.split(":");
+                    int id = 0;
+                    int data = 0;
+                    if (a.length == 1) {
+                        id = Integer.parseInt(a[0]);
+                        data = 0;
+                    }
+                    if (a.length == 2) {
+                        id = Integer.parseInt(a[0]);
+                        data = Integer.parseInt(a[1]);
+                    }
+                    OnayMenuItems omi = test.get(j);
+                    omi.setData(data);
+                    omi.setId(id);
+                    if (!lore.isEmpty())
+                        if (lore.size() == 1) {
+                            if (!Objects.equals(lore.get(0), ""))
+                                omi.setLore(lore);
+                        } else {
+                            omi.setLore(lore);
+                        }
+                    omi.setName(isim);
+                    omi.setSlot(j);
+                    omi.setOlay(tiklayinca);
+                    ITEMS.add(omi);
+                }
+            }
+        }
+
+        for (int i = 0; i < manager.marketmenusu.getConfig().getInt("Market.Size"); i++) {
+            test2.add(new Market());
+        }
+        for (String s : manager.marketmenusu.getConfigurationSection("").getKeys(false)) {
+            //TODO
+            if (!Objects.equals(s, "Market.Name")) {
                 int j = 298;
                 try {
                     j = Integer.parseInt(s);

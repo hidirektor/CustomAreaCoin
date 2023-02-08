@@ -1,10 +1,10 @@
 package me.t3sl4.cac.commands;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Objects;
+import java.util.*;
 
+import me.t3sl4.cac.CustomAreaCoin;
+import me.t3sl4.cac.market.Market;
+import me.t3sl4.cac.onay.OnayMenuItems;
 import me.t3sl4.cac.util.MadenCoinAPI;
 import me.t3sl4.cac.util.MessageUtil;
 import me.t3sl4.cac.util.SettingsManager;
@@ -13,6 +13,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
 
 public class MadenCoinCommands implements CommandExecutor {
     SettingsManager manager = SettingsManager.getInstance();
@@ -24,10 +25,13 @@ public class MadenCoinCommands implements CommandExecutor {
                 sender.sendMessage(MessageUtil.INFO_LINE_2);
                 sender.sendMessage(MessageUtil.INFO_LINE_3);
                 sender.sendMessage(MessageUtil.INFO_LINE_4);
+                sender.sendMessage(MessageUtil.INFO_LINE_5);
                 if (sender.isOp()) {
-                    sender.sendMessage(MessageUtil.INFO_LINE_5);
                     sender.sendMessage(MessageUtil.INFO_LINE_6);
                     sender.sendMessage(MessageUtil.INFO_LINE_7);
+                    sender.sendMessage(MessageUtil.INFO_LINE_8);
+                    sender.sendMessage(MessageUtil.INFO_LINE_9);
+                    sender.sendMessage(MessageUtil.INFO_LINE_10);
                 }
                 return true;
             }
@@ -37,7 +41,8 @@ public class MadenCoinCommands implements CommandExecutor {
                     !args[0].equalsIgnoreCase("-") &&
                     !args[0].equalsIgnoreCase("gonder") &&
                     !args[0].equalsIgnoreCase("giveall") &&
-                    !args[0].equalsIgnoreCase("purge")) {
+                    !args[0].equalsIgnoreCase("purge") &&
+                    !args[0].equalsIgnoreCase("market")) {
                 Player target = Bukkit.getPlayer(args[0]);
                 if (target == null) {
                     sender.sendMessage(MessageUtil.PLAYER_NOT_FOUND.replaceAll("%player%", args[0]));
@@ -46,6 +51,26 @@ public class MadenCoinCommands implements CommandExecutor {
                 sender.sendMessage(MessageUtil.SHOW_CREDIT
                         .replaceAll("%player%", target.getName())
                         .replaceAll("%madencoin%", String.valueOf(MadenCoinAPI.getKredi(target.getUniqueId().toString()))));
+            }
+            if (args[0].equalsIgnoreCase("market")) {
+                //TODO
+                Player komutGonderen = null;
+                if(sender instanceof Player) {
+                    komutGonderen = (Player) sender;
+                    Inventory inv = Bukkit.createInventory(null, 9, CustomAreaCoin.chatcolor(this.manager.marketmenusu.getConfig().getString("menuismi")));
+                    for (Market marketItems : MessageUtil.MARKETITEMS) {
+                        if (marketItems.getItemStack() != null) {
+                            List<String> templore = new ArrayList<>();
+                            for (String s : marketItems.getLore())
+                                templore.add(s.replace("%komutlar%", "asdasd"));
+                            marketItems.setLore(templore);
+                            inv.setItem(marketItems.getSlot(), marketItems.getItemStack());
+                        }
+                    }
+                    komutGonderen.openInventory(inv);
+                } else {
+                    sender.sendMessage(MessageUtil.CONSOLE_ERROR);
+                }
             }
             if (args[0].equalsIgnoreCase("gonder")) {
                 int islemMiktari;

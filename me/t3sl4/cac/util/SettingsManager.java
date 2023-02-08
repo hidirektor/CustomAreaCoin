@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import jdk.nashorn.internal.runtime.regexp.joni.Config;
 import me.t3sl4.cac.*;
 import me.t3sl4.cac.commands.MadenCoinCommands;
 import me.t3sl4.cac.commands.MadenCoinimCommand;
@@ -24,6 +25,7 @@ public class SettingsManager {
     public ConfigAPI commands;
 
     public ConfigAPI onaymenusu;
+    public ConfigAPI marketmenusu;
 
     private CustomAreaCoin tkredi;
 
@@ -54,6 +56,7 @@ public class SettingsManager {
         this.data = new ConfigAPI(CustomAreaCoin.getPlugin(), "data", Boolean.valueOf(true));
         this.commands = new ConfigAPI(CustomAreaCoin.getPlugin(), "komutlar", Boolean.valueOf(true));
         this.onaymenusu = new ConfigAPI(CustomAreaCoin.getPlugin(), "onaymenusu", Boolean.valueOf(true));
+        this.marketmenusu = new ConfigAPI(CustomAreaCoin.getPlugin(), "market", Boolean.valueOf(true));
         if (this.commands.getConfigurationSection("Komutlar") == null) {
             this.commands.getConfig().createSection("Komutlar");
             this.commands.save();

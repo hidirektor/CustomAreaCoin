@@ -60,12 +60,13 @@ PURGE: "/madencoin purge"
 INFO_LINE_1: '&5            =&b_&5=&b_&5=&b_&5=&b_&2&lMaden&c&lCoin&5=&b_&5=&b_&5=&b_&5=&b_'
 INFO_LINE_2: "&7/madencoinim &e» &aMadenCoinlerinizi Görüntülersiniz"
 INFO_LINE_3: "&7/madencoin <Oyuncu> &e» &aİstediğin Oyuncunun MadenCoinine Bakabilirsin"
-INFO_LINE_4: "&7/madencoin gonder <İsim> <Miktar> &e» &aSeçilen Oyuncuya MadenCoin Gönderir"
-INFO_LINE_5: "&7/madencoin [+/-] <İsim> <Miktar> &e» &aSeçilen Oyuncuya MadenCoin Ekler ya da MadenCoinini Silersiniz"
-INFO_LINE_6: "&7/madencoin yeni '/Girilen Komut' <Miktar> '/Gerçek Komut' &e» &aYeni Komut Oluşturmanızı Sağlar "
-INFO_LINE_7: "&7/madencoin giveall <Miktar> &e» &aSunucuda aktif olan tüm oyunculara coin verir."
-INFO_LINE_8: "&7/madencoin purge &e» &aTüm MadenCoinleri sıfırlar."
-INFO_LINE_9: "&7/madencoin reload &e» &aKredi Pluginini Yeniler"
+INFO_LINE_4: "&7/madencoin market &e» &aMadenCoin Marketini Görüntülersin"
+INFO_LINE_5: "&7/madencoin gonder <İsim> <Miktar> &e» &aSeçilen Oyuncuya MadenCoin Gönderir"
+INFO_LINE_6: "&7/madencoin [+/-] <İsim> <Miktar> &e» &aSeçilen Oyuncuya MadenCoin Ekler ya da MadenCoinini Silersiniz"
+INFO_LINE_7: "&7/madencoin yeni '/Girilen Komut' <Miktar> '/Gerçek Komut' &e» &aYeni Komut Oluşturmanızı Sağlar "
+INFO_LINE_8: "&7/madencoin giveall <Miktar> &e» &aSunucuda aktif olan tüm oyunculara coin verir."
+INFO_LINE_9: "&7/madencoin purge &e» &aTüm MadenCoinleri sıfırlar."
+INFO_LINE_10: "&7/madencoin reload &e» &aKredi Pluginini Yeniler"
 
 ########################################
 #    MySQL Ayarları / MySQL Settings   #

@@ -1,0 +1,34 @@
+Market:
+  Name: '&eCoinMarket'
+  Size: 9
+  Items:
+    0: #menüdeki konumu
+      ID: 57 #menüde görünecek item
+      Name: ''
+      Lore:
+        - ''
+      Buy:
+        enable: true #eğer burası false olursa bu item cam ya da dekoratif bir şeydir.
+        Coin: 30
+        GivenItem: #eşyaya tıklandığında verilecek item
+          ID: 57
+          Name: ''
+          Lore:
+            - ''
+          Enchants:
+            - ''
+    1: #menüdeki konumu
+      ID: 57 #menüde görünecek item
+      Name: ''
+      Lore:
+        - ''
+      Buy:
+        enable: false #eğer burası false olursa bu item cam ya da dekoratif bir şeydir. false olduğunda alttaki coinin önemi kalmaz
+        Coin: 30
+        GivenItem: #eşyaya tıklandığında verilecek item
+          ID: 57
+          Name: ''
+          Lore:
+            - ''
+          Enchants:
+            - ''

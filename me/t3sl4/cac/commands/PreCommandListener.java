@@ -137,7 +137,7 @@ public class PreCommandListener implements Listener {
     }
 
     public void b(Player p, ArrayList<String> realCommand1, String command, PlayerCommandPreprocessEvent e, Integer price) {
-        Inventory inv = Bukkit.createInventory(null, 9, CustomAreaCoin.chatcolor(this.manager.onaymenusu.getConfig().getString("menuismi")));
+        Inventory inv = Bukkit.createInventory(null, this.manager.marketmenusu.getConfig().getInt("Market.Size"), CustomAreaCoin.chatcolor(this.manager.marketmenusu.getConfig().getString("Market.Name")));
         for (OnayMenuItems onayMenuItems : MessageUtil.ITEMS) {
             if (onayMenuItems.getItemStack() != null) {
                 List<String> templore = new ArrayList<>();
