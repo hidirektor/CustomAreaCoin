@@ -1,0 +1,11 @@
+name: CustomAreaCoin
+version: 08.02.2023
+author: SYN_T3SL4
+softdepend: [PlaceholderAPI, MVdWPlaceholderAPI]
+main: me.t3sl4.cac.CustomAreaCoin
+
+commands:
+  madencoinim:
+    description: Shows the player's madencoin amount.
+  madencoin:
+    description: Main command of plugin.

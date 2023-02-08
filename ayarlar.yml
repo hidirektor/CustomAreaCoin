@@ -1,0 +1,80 @@
+#####################################
+#         Madencoin Plugin          #
+#           by SYN_T3SL4            #
+#####################################
+
+########################################
+#   Genel Ayarlar / General Settings   #
+########################################
+
+PREFIX: "&2&lM&c&lC &e» "
+
+# Gün Cinsinden / In Days #
+ONAY_ISTEME_SURESI: 3
+PLACEHOLDER_SUPPORT: false
+
+########################################
+#   Genel Mesajlar / General Messages  #
+########################################
+
+CONFIG_RELOADED: "&aConfig Başarıyla Yenilendi !"
+COMMAND_ADDED: "&aKomut Başarıyla Oluşturuldu."
+
+SHOW_CREDIT_SELF: '&a%madencoin% &7MadenCoininiz Mevcut!'
+SHOW_CREDIT: '&c%player% &7isimli Oyuncunun &a%madencoin% &7MadenCoini Mevcut.'
+
+CREDI_ADDED_OTHER: "&e%player% &7isimli Oyuncunun Hesabına &a%madencoin% &7MadenCoin Eklendi"
+CREDI_ADDED_YOUR: "&7Hesabınıza &a%madencoin% &7MadenCoin Eklendi. Şuan da &a%toplam_madencoin% &7MadenCoininiz Mevcuttur!"
+CREDI_TAKEN_OTHER: "&e%player% &7isimli Oyuncunun Hesabından &4%madencoin% &7MadenCoin Alındı."
+CREDI_TAKEN_YOUR: "&7Hesabınızdan &4%madencoin% &7MadenCoin Alınmıştır. Şuan da &a%toplam_madencoin% &7MadenCoininiz Mevcuttur."
+SUM_OF_TRANSACT:
+  - '&7-------------'
+  - '&7Gönderilen Oyuncu: &e%player%'
+  - '&7Gönderilen Miktar: &e%madencoin%'
+  - '&7Hesabınızda Kalan: &e%kalancoin%'
+  - '&7-------------'
+GIVEN: "&7Sunucudaki tüm oyunculara &a%madencoin% &7MadenCoin verilmiştir."
+PURGE_SUCCESS: "&7Tüm oyuncuların MadenCoinleri silinmiştir &4!!"
+
+########################################
+#    Hata Mesajları / Error Messages   #
+########################################
+NOT_ENOUGH_CREDIT: "&4%madencoin% &7MadenCoine İhtiyacınız Var."
+PLAYER_NOT_FOUND: "&4%player% &7İsimli Oyuncu Bulunamadı !"
+
+NO_PERM_MESSAGE: "&4Bunu Kullanamazsınız !"
+MUST_BE_NUMBER: "&4Sayı olarak girdiğiniz parametre maalesef bir sayı değil !"
+CMD_NEW_ERROR: "&4Maalesef komut oluşturulurken hata meydana geldi. Lütfen girdiğin parametreleri ve tırnak işaretlerini kontrol et."
+KOMUT_OLUSTURMA_HATASI: "&4Komut Oluşturulurken Bir Sorun Oluştu !"
+CONSOLE_ERROR: "&4Maalesef konsol bu komutu kullanamaz"
+
+TEKSEFERLIK_KOMUT: '&4Tek seferlik bir komutu tekrar kullanamazsın!'
+CMD_NEW: "/madencoin yeni <komut ismi> <fiyat> <komut>"
+GONDER: "/madencoin gonder <Oyuncu> <Miktar>"
+GIVEALL: "/madencoin giveall <Miktar>"
+PURGE: "/madencoin purge"
+
+########################################
+#     Bilgi Yazıları / INFO LINES      #
+########################################
+INFO_LINE_1: '&5            =&b_&5=&b_&5=&b_&5=&b_&2&lMaden&c&lCoin&5=&b_&5=&b_&5=&b_&5=&b_'
+INFO_LINE_2: "&7/madencoinim &e» &aMadenCoinlerinizi Görüntülersiniz"
+INFO_LINE_3: "&7/madencoin <Oyuncu> &e» &aİstediğin Oyuncunun MadenCoinine Bakabilirsin"
+INFO_LINE_4: "&7/madencoin gonder <İsim> <Miktar> &e» &aSeçilen Oyuncuya MadenCoin Gönderir"
+INFO_LINE_5: "&7/madencoin [+/-] <İsim> <Miktar> &e» &aSeçilen Oyuncuya MadenCoin Ekler ya da MadenCoinini Silersiniz"
+INFO_LINE_6: "&7/madencoin yeni '/Girilen Komut' <Miktar> '/Gerçek Komut' &e» &aYeni Komut Oluşturmanızı Sağlar "
+INFO_LINE_7: "&7/madencoin giveall <Miktar> &e» &aSunucuda aktif olan tüm oyunculara coin verir."
+INFO_LINE_8: "&7/madencoin purge &e» &aTüm MadenCoinleri sıfırlar."
+INFO_LINE_9: "&7/madencoin reload &e» &aKredi Pluginini Yeniler"
+
+########################################
+#    MySQL Ayarları / MySQL Settings   #
+########################################
+mysql-enabled: false
+MySQL:
+  host: hostname
+  port: "3306"
+  database: database
+  tablename: madencoin-db
+  user: root
+  password: "123"
