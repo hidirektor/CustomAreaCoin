@@ -26,6 +26,7 @@ public class SettingsManager {
 
     public ConfigAPI onaymenusu;
     public ConfigAPI marketmenusu;
+    public ConfigAPI history;
 
     private CustomAreaCoin tkredi;
 
@@ -57,6 +58,7 @@ public class SettingsManager {
         this.commands = new ConfigAPI(CustomAreaCoin.getPlugin(), "komutlar", Boolean.valueOf(true));
         this.onaymenusu = new ConfigAPI(CustomAreaCoin.getPlugin(), "onaymenusu", Boolean.valueOf(true));
         this.marketmenusu = new ConfigAPI(CustomAreaCoin.getPlugin(), "marketmenusu", Boolean.valueOf(true));
+        this.history = new ConfigAPI(CustomAreaCoin.getPlugin(), "history", Boolean.valueOf(true));
         if (this.commands.getConfigurationSection("Komutlar") == null) {
             this.commands.getConfig().createSection("Komutlar");
             this.commands.save();

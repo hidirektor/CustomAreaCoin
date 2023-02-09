@@ -1,52 +1,160 @@
 Market:
   Name: '&eCoinMarket'
-  Size: 9
+  Size: 54
   Items:
     0: #menüdeki konumu
-      ID: 57:0 #menüde görünecek item
+      ID: "57:0" #menüde görünecek item
       Name: ''
       Lore:
         - ''
       Buy:
-        enable: true #eğer burası false olursa bu item cam ya da dekoratif bir şeydir.
+        Enable: true #eğer burası false olursa bu item cam ya da dekoratif bir şeydir.
         Coin: 30
         GivenItem: #eşyaya tıklandığında verilecek item
-          ID: 57
-          Name: ''
-          Lore:
-            - ''
-          Enchants:
-            - ''
+          ItemCount: 3
+          0:
+            ID: "57"
+            Count: 1
+            EnchantSystem: false
+            CommandSystem: true
+            Name: ''
+            Lore:
+              - ''
+            Enchants:
+              - ''
+              - ''
+            Commands:
+              - '/itemsp ver %player% domuz 1'
+          1:
+            ID: "57"
+            Count: 1
+            EnchantSystem: false
+            CommandSystem: false
+            Name: ''
+            Lore:
+              - ''
+            Enchants:
+              - ''
+              - ''
+            Commands:
+              - ''
+              - ''
+          2:
+            ID: "57"
+            Count: 1
+            EnchantSystem: false
+            CommandSystem: false
+            Name: ''
+            Lore:
+              - ''
+            Enchants:
+              - ''
+              - ''
+            Commands:
+              - ''
+              - ''
     1: #menüdeki konumu
-      ID: 57:0 #menüde görünecek item
+      ID: "57:0" #menüde görünecek item
       Name: ''
       Lore:
         - ''
       Buy:
-        enable: false #eğer burası false olursa bu item cam ya da dekoratif bir şeydir. false olduğunda alttaki coinin önemi kalmaz
+        Enable: false #eğer burası false olursa bu item cam ya da dekoratif bir şeydir. false olduğunda alttaki coinin önemi kalmaz
         Coin: 30
         GivenItem: #eşyaya tıklandığında verilecek item
-          ID: 57
-          Name: ''
-          Lore:
-            - ''
-          Enchants:
-            - ''
+          ItemCount: 3
+          0:
+            ID: "57"
+            Count: 1
+            EnchantSystem: false
+            CommandSystem: false
+            Name: ''
+            Lore:
+              - ''
+            Enchants:
+              - ''
+              - ''
+            Commands:
+              - ''
+              - ''
+          1:
+            ID: "57"
+            Count: 1
+            EnchantSystem: false
+            CommandSystem: false
+            Name: ''
+            Lore:
+              - ''
+            Enchants:
+              - ''
+              - ''
+            Commands:
+              - ''
+              - ''
+          2:
+            ID: "57"
+            Count: 1
+            EnchantSystem: false
+            CommandSystem: false
+            Name: ''
+            Lore:
+              - ''
+            Enchants:
+              - ''
+              - ''
+            Commands:
+              - ''
+              - ''
     2:
-      ID: 21:0
+      ID: "21:0"
       Name: ''
       Lore:
         - ''
         - ''
       Buy:
-        enable: false
+        Enable: true
         Coin: 30
         GivenItem:
-          ID: 57
-          Name: ''
-          Lore:
-            - ''
-            - ''
-          Enchants:
-            - ''
-            - ''
+          ItemCount: 3
+          0:
+            ID: "57"
+            Count: 1
+            EnchantSystem: false
+            CommandSystem: false
+            Name: ''
+            Lore:
+              - ''
+            Enchants:
+              - ''
+              - ''
+            Commands:
+              - ''
+              - ''
+          1:
+            ID: "57"
+            Count: 1
+            EnchantSystem: false
+            CommandSystem: false
+            Name: ''
+            Lore:
+              - ''
+            Enchants:
+              - ''
+              - ''
+            Commands:
+              - ''
+              - ''
+          2:
+            ID: "57"
+            Count: 1
+            EnchantSystem: false
+            CommandSystem: false
+            Name: ''
+            Lore:
+              - ''
+            Enchants:
+              - ''
+              - ''
+            Commands:
+              - ''
+              - ''

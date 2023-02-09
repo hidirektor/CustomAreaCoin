@@ -17,6 +17,8 @@ public class MessageUtil {
     public static String MUST_BE_NUMBER;
     public static String CMD_NEW_ERROR;
     public static String CONSOLE_ERROR;
+    public static String BUY_ERROR;
+    public static String FULL_INVENTORY;
     public static String SHOW_CREDIT;
     public static String SHOW_CREDIT_SELF;
     public static String NOT_ENOUGH_CREDIT;
@@ -26,6 +28,7 @@ public class MessageUtil {
     public static String CREDI_TAKEN_OTHER;
     public static String CREDI_TAKEN_YOUR;
     public static List<String> SUM_OF_TRANSACT;
+    public static List<String> BUY_FROM_GUI;
     public static String GIVEN;
     public static String PURGE_SUCCESS;
     public static String INFO_LINE_1;
@@ -42,6 +45,8 @@ public class MessageUtil {
     public static int ONAY_ISTEME_SURESI;
     public static String ONAY_MENU_TITLE;
     public static boolean PLACEHOLDER_SUPPORT;
+    public static boolean MENU_KAPATMA;
+    public static String AYRAC;
     public static String CMD_NEW;
     public static String GONDER;
     public static String GIVEALL;
@@ -64,6 +69,8 @@ public class MessageUtil {
         MUST_BE_NUMBER = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("MUST_BE_NUMBER"));
         CMD_NEW_ERROR = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("CMD_NEW_ERROR"));
         CONSOLE_ERROR = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("CONSOLE_ERROR"));
+        BUY_ERROR = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("BUY_ERROR"));
+        FULL_INVENTORY = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("FULL_INVENTORY"));
         CREDI_ADDED_OTHER = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("CREDI_ADDED_OTHER"));
         SHOW_CREDIT = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("SHOW_CREDIT"));
         SHOW_CREDIT_SELF = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("SHOW_CREDIT_SELF"));
@@ -75,7 +82,10 @@ public class MessageUtil {
         SUM_OF_TRANSACT = CustomAreaCoin.colorizeList(manager.config.getConfig().getStringList("SUM_OF_TRANSACT"));
         GIVEN = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("GIVEN"));
         PURGE_SUCCESS = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("PURGE_SUCCESS"));
+        BUY_FROM_GUI = CustomAreaCoin.colorizeList(manager.config.getConfig().getStringList("BUY_FROM_GUI"));
         PLACEHOLDER_SUPPORT = manager.config.getConfig().getBoolean("PLACEHOLDER_SUPPORT");
+        MENU_KAPATMA = manager.config.getConfig().getBoolean("MENU_KAPATMA");
+        AYRAC = manager.config.getConfig().getString("AYRAC");
         INFO_LINE_1 = CustomAreaCoin.chatcolor(manager.config.getConfig().getString("INFO_LINE_1"));
         INFO_LINE_2 = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("INFO_LINE_2"));
         INFO_LINE_3 = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("INFO_LINE_3"));

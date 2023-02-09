@@ -12,6 +12,8 @@ PREFIX: "&2&lM&c&lC &e» "
 # Gün Cinsinden / In Days #
 ONAY_ISTEME_SURESI: 3
 PLACEHOLDER_SUPPORT: false
+MENU_KAPATMA: false
+AYRAC: "&e,"
 
 ########################################
 #   Genel Mesajlar / General Messages  #
@@ -35,6 +37,12 @@ SUM_OF_TRANSACT:
   - '&7-------------'
 GIVEN: "&7Sunucudaki tüm oyunculara &a%madencoin% &7MadenCoin verilmiştir."
 PURGE_SUCCESS: "&7Tüm oyuncuların MadenCoinleri silinmiştir &4!!"
+BUY_FROM_GUI:
+  - '&7-------------'
+  - '&7Satın Alınan Eşya: &e%esya%'
+  - '&7Ödenen Miktar: &e%madencoin%'
+  - '&7Hesabınızda Kalan: &e%kalancoin%'
+  - '&7-------------'
 
 ########################################
 #    Hata Mesajları / Error Messages   #
@@ -47,6 +55,8 @@ MUST_BE_NUMBER: "&4Sayı olarak girdiğiniz parametre maalesef bir sayı değil 
 CMD_NEW_ERROR: "&4Maalesef komut oluşturulurken hata meydana geldi. Lütfen girdiğin parametreleri ve tırnak işaretlerini kontrol et."
 KOMUT_OLUSTURMA_HATASI: "&4Komut Oluşturulurken Bir Sorun Oluştu !"
 CONSOLE_ERROR: "&4Maalesef konsol bu komutu kullanamaz"
+BUY_ERROR: "&eMaalesef bu eşyayı almak için &4%madencoin% &eMadenCoin'e ihtiyacın var."
+FULL_INVENTORY: "&4Envanterin dolu olduğu için şuan marketten bir şey satın alamıyorsun."
 
 TEKSEFERLIK_KOMUT: '&4Tek seferlik bir komutu tekrar kullanamazsın!'
 CMD_NEW: "/madencoin yeni <komut ismi> <fiyat> <komut>"
