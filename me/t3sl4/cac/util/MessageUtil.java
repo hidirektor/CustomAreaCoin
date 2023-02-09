@@ -111,7 +111,7 @@ public class MessageUtil {
                         manager.onaymenusu.getConfig().get(j + ".isim") != null) {
                     String item = manager.onaymenusu.getConfig().getString(j + ".item");
                     String tiklayinca = manager.onaymenusu.getConfig().getString(j + ".tiklayinca");
-                    List<String> lore = manager.onaymenusu.getConfig().getStringList(j + ".lore");
+                    List<String> lore = CustomAreaCoin.colorizeList(manager.onaymenusu.getConfig().getStringList(j + ".lore"));
                     String isim = manager.onaymenusu.getConfig().getString(j + ".isim");
                     String[] a = item.split(":");
                     int id = 0;
@@ -145,24 +145,22 @@ public class MessageUtil {
         for (int i = 0; i < manager.marketmenusu.getConfig().getInt("Market.Size"); i++) {
             test2.add(new Market());
         }
-        for (String s : manager.marketmenusu.getConfigurationSection("").getKeys(false)) {
+        for (String s : manager.marketmenusu.getConfigurationSection("Market.Items").getKeys(false)) {
             //TODO
             if (!Objects.equals(s, "Market.Name")) {
                 int j = 298;
                 try {
                     j = Integer.parseInt(s);
                 } catch (Exception e) {
-                    Bukkit.getConsoleSender().sendMessage(CustomAreaCoin.chatcolor("&4Onay Menu Hata!"));
+                    Bukkit.getConsoleSender().sendMessage(CustomAreaCoin.chatcolor("&4Market Menu Hata!"));
                     return;
                 }
-                if (manager.onaymenusu.getConfig().get(j + ".item") != null &&
-                        manager.onaymenusu.getConfig().get(j + ".tiklayinca") != null &&
-                        manager.onaymenusu.getConfig().get(j + ".lore") != null &&
-                        manager.onaymenusu.getConfig().get(j + ".isim") != null) {
-                    String item = manager.onaymenusu.getConfig().getString(j + ".item");
-                    String tiklayinca = manager.onaymenusu.getConfig().getString(j + ".tiklayinca");
-                    List<String> lore = manager.onaymenusu.getConfig().getStringList(j + ".lore");
-                    String isim = manager.onaymenusu.getConfig().getString(j + ".isim");
+                if (manager.marketmenusu.getConfig().get("Market.Items." + j + ".ID") != null &&
+                        manager.marketmenusu.getConfig().get("Market.Items." + j + ".Name") != null &&
+                        manager.marketmenusu.getConfig().get("Market.Items." + j + ".Lore") != null) {
+                    String item = manager.marketmenusu.getConfig().getString("Market.Items." + j + ".ID");
+                    List<String> lore = CustomAreaCoin.colorizeList(manager.marketmenusu.getConfig().getStringList("Market.Items." + j + ".Lore"));
+                    String isim = manager.marketmenusu.getConfig().getString("Market.Items." + j + ".Name");
                     String[] a = item.split(":");
                     int id = 0;
                     int data = 0;
@@ -174,7 +172,7 @@ public class MessageUtil {
                         id = Integer.parseInt(a[0]);
                         data = Integer.parseInt(a[1]);
                     }
-                    OnayMenuItems omi = test.get(j);
+                    Market omi = test2.get(j);
                     omi.setData(data);
                     omi.setId(id);
                     if (!lore.isEmpty())
@@ -186,8 +184,8 @@ public class MessageUtil {
                         }
                     omi.setName(isim);
                     omi.setSlot(j);
-                    omi.setOlay(tiklayinca);
-                    ITEMS.add(omi);
+                    //omi.setOlay(tiklayinca);
+                    MARKETITEMS.add(omi);
                 }
             }
         }

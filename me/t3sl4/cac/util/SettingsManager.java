@@ -4,11 +4,11 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import jdk.nashorn.internal.runtime.regexp.joni.Config;
 import me.t3sl4.cac.*;
 import me.t3sl4.cac.commands.MadenCoinCommands;
 import me.t3sl4.cac.commands.MadenCoinimCommand;
 import me.t3sl4.cac.commands.PreCommandListener;
+import me.t3sl4.cac.market.ClickEvent;
 import me.t3sl4.cac.mysql.MySQL;
 import me.t3sl4.cac.onay.Onay;
 import me.t3sl4.cac.tekseferlik.TekSeferlik;
@@ -56,7 +56,7 @@ public class SettingsManager {
         this.data = new ConfigAPI(CustomAreaCoin.getPlugin(), "data", Boolean.valueOf(true));
         this.commands = new ConfigAPI(CustomAreaCoin.getPlugin(), "komutlar", Boolean.valueOf(true));
         this.onaymenusu = new ConfigAPI(CustomAreaCoin.getPlugin(), "onaymenusu", Boolean.valueOf(true));
-        this.marketmenusu = new ConfigAPI(CustomAreaCoin.getPlugin(), "market", Boolean.valueOf(true));
+        this.marketmenusu = new ConfigAPI(CustomAreaCoin.getPlugin(), "marketmenusu", Boolean.valueOf(true));
         if (this.commands.getConfigurationSection("Komutlar") == null) {
             this.commands.getConfig().createSection("Komutlar");
             this.commands.save();
@@ -67,7 +67,7 @@ public class SettingsManager {
             MySQL.createTable();
         }
         registerCommands();
-        registerListener(new Listener[] { new PreCommandListener() });
+        registerListener(new Listener[] { new PreCommandListener(), new ClickEvent() });
         MessageUtil.loadMessages();
     }
 

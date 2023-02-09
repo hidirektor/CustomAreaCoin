@@ -102,7 +102,7 @@ public class PreCommandListener implements Listener {
     private HashMap<String, PlayerCommandPreprocessEvent> event = new HashMap<>();
 
     @EventHandler
-    public void c(InventoryClickEvent e) {
+    public void onayMenuClick(InventoryClickEvent e) {
         if (e.getCurrentItem() == null)
             return;
         if (e.getCurrentItem().getType().equals(Material.AIR))
@@ -137,7 +137,7 @@ public class PreCommandListener implements Listener {
     }
 
     public void b(Player p, ArrayList<String> realCommand1, String command, PlayerCommandPreprocessEvent e, Integer price) {
-        Inventory inv = Bukkit.createInventory(null, this.manager.marketmenusu.getConfig().getInt("Market.Size"), CustomAreaCoin.chatcolor(this.manager.marketmenusu.getConfig().getString("Market.Name")));
+        Inventory inv = Bukkit.createInventory(null, 9, CustomAreaCoin.chatcolor(MessageUtil.ONAY_MENU_TITLE));
         for (OnayMenuItems onayMenuItems : MessageUtil.ITEMS) {
             if (onayMenuItems.getItemStack() != null) {
                 List<String> templore = new ArrayList<>();

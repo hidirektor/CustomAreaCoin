@@ -3,7 +3,7 @@ Market:
   Size: 9
   Items:
     0: #menüdeki konumu
-      ID: 57 #menüde görünecek item
+      ID: 57:0 #menüde görünecek item
       Name: ''
       Lore:
         - ''
@@ -18,7 +18,7 @@ Market:
           Enchants:
             - ''
     1: #menüdeki konumu
-      ID: 57 #menüde görünecek item
+      ID: 57:0 #menüde görünecek item
       Name: ''
       Lore:
         - ''
@@ -31,4 +31,22 @@ Market:
           Lore:
             - ''
           Enchants:
+            - ''
+    2:
+      ID: 21:0
+      Name: ''
+      Lore:
+        - ''
+        - ''
+      Buy:
+        enable: false
+        Coin: 30
+        GivenItem:
+          ID: 57
+          Name: ''
+          Lore:
+            - ''
+            - ''
+          Enchants:
+            - ''
             - ''

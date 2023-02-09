@@ -1,5 +1,6 @@
 package me.t3sl4.cac;
 
+import me.t3sl4.cac.market.ClickEvent;
 import me.t3sl4.cac.placeholder.MVdWPlaceholder;
 import me.t3sl4.cac.placeholder.PAPIPlaceholder;
 import me.t3sl4.cac.util.MessageUtil;

@@ -9,13 +9,18 @@ import me.t3sl4.cac.util.MadenCoinAPI;
 import me.t3sl4.cac.util.MessageUtil;
 import me.t3sl4.cac.util.SettingsManager;
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
 
-public class MadenCoinCommands implements CommandExecutor {
+public class MadenCoinCommands implements CommandExecutor, Listener {
     SettingsManager manager = SettingsManager.getInstance();
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
@@ -57,7 +62,7 @@ public class MadenCoinCommands implements CommandExecutor {
                 Player komutGonderen = null;
                 if(sender instanceof Player) {
                     komutGonderen = (Player) sender;
-                    Inventory inv = Bukkit.createInventory(null, 9, CustomAreaCoin.chatcolor(this.manager.marketmenusu.getConfig().getString("menuismi")));
+                    Inventory inv = Bukkit.createInventory(null, this.manager.marketmenusu.getConfig().getInt("Market.Size"), CustomAreaCoin.chatcolor(this.manager.marketmenusu.getConfig().getString("Market.Name")));
                     for (Market marketItems : MessageUtil.MARKETITEMS) {
                         if (marketItems.getItemStack() != null) {
                             List<String> templore = new ArrayList<>();
