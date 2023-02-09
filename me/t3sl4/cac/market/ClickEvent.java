@@ -85,6 +85,13 @@ public class ClickEvent implements Listener {
                                 }
                             }
                             MadenCoinAPI.removeKredi(uuid, manager.marketmenusu.getConfig().getInt("Market.Items." + e.getSlot() + ".Buy.Coin"));
+                            if (manager.history.getConfig().get(uuid.toString() + ".kredi") == null) {
+                                manager.history.getConfig().set(uuid + ".Displayname", p.getDisplayName());
+                                manager.history.getConfig().set(uuid + ".MadenCoin", String.valueOf(manager.marketmenusu.getConfig().getInt("Market.Items." + e.getSlot() + ".Buy.Coin")));
+                                manager.history.getConfig().set(uuid + ".Product.Name", manager.marketmenusu.getConfig().getString("Market.Items." + e.getSlot() + ".Name"));
+                                manager.history.getConfig().set(uuid + ".Product.Lore", manager.marketmenusu.getConfig().getString("Market.Items." + e.getSlot() + ".Lore"));
+                                manager.history.save();
+                            }
                             if(verilecekSayi == 1) {
                                 for(String satir : MessageUtil.BUY_FROM_GUI) {
                                     p.sendMessage(satir.replaceAll("%esya%", CustomAreaCoin.chatcolor(manager.marketmenusu.getConfig().getString("Market.Items." + e.getSlot() + ".Buy.GivenItem." + 0 + ".Name"))).replaceAll("%madencoin%", String.valueOf(manager.marketmenusu.getConfig().getInt("Market.Items." + e.getSlot() + ".Buy.Coin"))).replaceAll("%kalancoin%", String.valueOf(MadenCoinAPI.getKredi(uuid))));
