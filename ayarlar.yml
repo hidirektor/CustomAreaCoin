@@ -65,6 +65,7 @@ BUY_ERROR: "&eMaalesef bu eşyayı almak için &4%madencoin% &eMadenCoin'e ihtiy
 FULL_INVENTORY: "&4Envanterin dolu olduğu için şuan marketten bir şey satın alamıyorsun."
 MARKET_KAPALI: "&4Maalesef market sistemimiz şuanda devre dışı !"
 WORLD_ERROR: "&4Maalesef bulunduğun dünya olan &d%dunya% &4dünyasında market sistemi kapalı."
+MARKET_MENU_ERROR: "&4Market menüsünde boyut ile alakalı bir hata var. Lütfen yetkiliye bildirin."
 
 TEKSEFERLIK_KOMUT: '&4Tek seferlik bir komutu tekrar kullanamazsın!'
 CMD_NEW: "/madencoin yeni <komut ismi> <fiyat> <komut>"

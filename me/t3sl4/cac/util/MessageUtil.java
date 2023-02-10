@@ -21,6 +21,7 @@ public class MessageUtil {
     public static String FULL_INVENTORY;
     public static String MARKET_KAPALI;
     public static String WORLD_ERROR;
+    public static String MARKET_MENU_ERROR;
     public static String SHOW_CREDIT;
     public static String SHOW_CREDIT_SELF;
     public static String NOT_ENOUGH_CREDIT;
@@ -78,6 +79,7 @@ public class MessageUtil {
         FULL_INVENTORY = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("FULL_INVENTORY"));
         MARKET_KAPALI = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("MARKET_KAPALI"));
         WORLD_ERROR = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("WORLD_ERROR"));
+        MARKET_MENU_ERROR = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("MARKET_MENU_ERROR"));
         CREDI_ADDED_OTHER = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("CREDI_ADDED_OTHER"));
         SHOW_CREDIT = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("SHOW_CREDIT"));
         SHOW_CREDIT_SELF = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("SHOW_CREDIT_SELF"));

@@ -64,13 +64,17 @@ public class MadenCoinCommands implements CommandExecutor, Listener {
                     if(MessageUtil.MARKET) {
                         if(MessageUtil.WORLD) {
                             if(MessageUtil.WORLDLIST.contains(komutGonderen.getWorld().getName())) {
-                                Inventory inv = Bukkit.createInventory(null, this.manager.marketmenusu.getConfig().getInt("Market.Size"), CustomAreaCoin.chatcolor(this.manager.marketmenusu.getConfig().getString("Market.Name")));
-                                for (Market marketItems : MessageUtil.MARKETITEMS) {
-                                    if (marketItems.getItemStack() != null) {
-                                        inv.setItem(marketItems.getSlot(), marketItems.getItemStack());
+                                if(manager.marketmenusu.getConfig().getInt("Market.Size") % 9 == 0) {
+                                    Inventory inv = Bukkit.createInventory(null, this.manager.marketmenusu.getConfig().getInt("Market.Size"), CustomAreaCoin.chatcolor(this.manager.marketmenusu.getConfig().getString("Market.Name")));
+                                    for (Market marketItems : MessageUtil.MARKETITEMS) {
+                                        if (marketItems.getItemStack() != null) {
+                                            inv.setItem(marketItems.getSlot(), marketItems.getItemStack());
+                                        }
                                     }
+                                    komutGonderen.openInventory(inv);
+                                } else {
+                                    komutGonderen.sendMessage(MessageUtil.MARKET_MENU_ERROR);
                                 }
-                                komutGonderen.openInventory(inv);
                             } else {
                                 komutGonderen.sendMessage(MessageUtil.WORLD_ERROR.replaceAll("%dunya%", komutGonderen.getWorld().getName()));
                             }
