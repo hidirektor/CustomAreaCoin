@@ -43,6 +43,8 @@ public class SettingsManager {
         try {
             File file = new File(tkredi.getDataFolder() + "/data/");
             file.mkdirs();
+            File fileMenu = new File(tkredi.getDataFolder() + "/menu/");
+            fileMenu.mkdirs();
             this.onaytasks = SL.<ArrayList<Onay>>load(tkredi.getDataFolder() + "/data/zamanlar.yml");
             this.tekSeferlik = SL.<ArrayList<TekSeferlik>>load(tkredi.getDataFolder() + "/data/tekseferlik.yml");
         } catch (Exception e) {
@@ -54,11 +56,11 @@ public class SettingsManager {
             }
         }
         this.config = new ConfigAPI(CustomAreaCoin.getPlugin(), "ayarlar", Boolean.valueOf(true));
-        this.data = new ConfigAPI(CustomAreaCoin.getPlugin(), "data", Boolean.valueOf(true));
+        this.data = new ConfigAPI(CustomAreaCoin.getPlugin(), "/data/data", Boolean.valueOf(true));
         this.commands = new ConfigAPI(CustomAreaCoin.getPlugin(), "komutlar", Boolean.valueOf(true));
-        this.onaymenusu = new ConfigAPI(CustomAreaCoin.getPlugin(), "onaymenusu", Boolean.valueOf(true));
-        this.marketmenusu = new ConfigAPI(CustomAreaCoin.getPlugin(), "marketmenusu", Boolean.valueOf(true));
-        this.history = new ConfigAPI(CustomAreaCoin.getPlugin(), "history", Boolean.valueOf(true));
+        this.onaymenusu = new ConfigAPI(CustomAreaCoin.getPlugin(), "onay", Boolean.valueOf(true));
+        this.marketmenusu = new ConfigAPI(CustomAreaCoin.getPlugin(), "market", Boolean.valueOf(true));
+        this.history = new ConfigAPI(CustomAreaCoin.getPlugin(), "/data/history", Boolean.valueOf(true));
         if (this.commands.getConfigurationSection("Komutlar") == null) {
             this.commands.getConfig().createSection("Komutlar");
             this.commands.save();

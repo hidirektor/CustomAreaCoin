@@ -58,21 +58,34 @@ public class MadenCoinCommands implements CommandExecutor, Listener {
                         .replaceAll("%madencoin%", String.valueOf(MadenCoinAPI.getKredi(target.getUniqueId().toString()))));
             }
             if (args[0].equalsIgnoreCase("market")) {
-                //TODO
                 Player komutGonderen = null;
                 if(sender instanceof Player) {
                     komutGonderen = (Player) sender;
-                    Inventory inv = Bukkit.createInventory(null, this.manager.marketmenusu.getConfig().getInt("Market.Size"), CustomAreaCoin.chatcolor(this.manager.marketmenusu.getConfig().getString("Market.Name")));
-                    for (Market marketItems : MessageUtil.MARKETITEMS) {
-                        if (marketItems.getItemStack() != null) {
-                            List<String> templore = new ArrayList<>();
-                            for (String s : marketItems.getLore())
-                                templore.add(s.replace("%komutlar%", "asdasd"));
-                            marketItems.setLore(templore);
-                            inv.setItem(marketItems.getSlot(), marketItems.getItemStack());
+                    if(MessageUtil.MARKET) {
+                        if(MessageUtil.WORLD) {
+                            if(MessageUtil.WORLDLIST.contains(komutGonderen.getWorld().getName())) {
+                                Inventory inv = Bukkit.createInventory(null, this.manager.marketmenusu.getConfig().getInt("Market.Size"), CustomAreaCoin.chatcolor(this.manager.marketmenusu.getConfig().getString("Market.Name")));
+                                for (Market marketItems : MessageUtil.MARKETITEMS) {
+                                    if (marketItems.getItemStack() != null) {
+                                        inv.setItem(marketItems.getSlot(), marketItems.getItemStack());
+                                    }
+                                }
+                                komutGonderen.openInventory(inv);
+                            } else {
+                                komutGonderen.sendMessage(MessageUtil.WORLD_ERROR.replaceAll("%dunya%", komutGonderen.getWorld().getName()));
+                            }
+                        } else {
+                            Inventory inv = Bukkit.createInventory(null, this.manager.marketmenusu.getConfig().getInt("Market.Size"), CustomAreaCoin.chatcolor(this.manager.marketmenusu.getConfig().getString("Market.Name")));
+                            for (Market marketItems : MessageUtil.MARKETITEMS) {
+                                if (marketItems.getItemStack() != null) {
+                                    inv.setItem(marketItems.getSlot(), marketItems.getItemStack());
+                                }
+                            }
+                            komutGonderen.openInventory(inv);
                         }
+                    } else {
+                        komutGonderen.sendMessage(MessageUtil.MARKET_KAPALI);
                     }
-                    komutGonderen.openInventory(inv);
                 } else {
                     sender.sendMessage(MessageUtil.CONSOLE_ERROR);
                 }

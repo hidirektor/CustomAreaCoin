@@ -12,8 +12,14 @@ PREFIX: "&2&lM&c&lC &e» "
 # Gün Cinsinden / In Days #
 ONAY_ISTEME_SURESI: 3
 PLACEHOLDER_SUPPORT: false
+MARKET: true
 MENU_KAPATMA: false
 AYRAC: "&e,"
+WORLDS:
+  SYSTEM: false
+  LIST:
+    - ''
+    - ''
 
 ########################################
 #   Genel Mesajlar / General Messages  #
@@ -57,6 +63,8 @@ KOMUT_OLUSTURMA_HATASI: "&4Komut Oluşturulurken Bir Sorun Oluştu !"
 CONSOLE_ERROR: "&4Maalesef konsol bu komutu kullanamaz"
 BUY_ERROR: "&eMaalesef bu eşyayı almak için &4%madencoin% &eMadenCoin'e ihtiyacın var."
 FULL_INVENTORY: "&4Envanterin dolu olduğu için şuan marketten bir şey satın alamıyorsun."
+MARKET_KAPALI: "&4Maalesef market sistemimiz şuanda devre dışı !"
+WORLD_ERROR: "&4Maalesef bulunduğun dünya olan &d%dunya% &4dünyasında market sistemi kapalı."
 
 TEKSEFERLIK_KOMUT: '&4Tek seferlik bir komutu tekrar kullanamazsın!'
 CMD_NEW: "/madencoin yeni <komut ismi> <fiyat> <komut>"

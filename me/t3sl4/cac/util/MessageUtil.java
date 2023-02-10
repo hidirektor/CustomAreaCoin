@@ -19,6 +19,8 @@ public class MessageUtil {
     public static String CONSOLE_ERROR;
     public static String BUY_ERROR;
     public static String FULL_INVENTORY;
+    public static String MARKET_KAPALI;
+    public static String WORLD_ERROR;
     public static String SHOW_CREDIT;
     public static String SHOW_CREDIT_SELF;
     public static String NOT_ENOUGH_CREDIT;
@@ -45,8 +47,11 @@ public class MessageUtil {
     public static int ONAY_ISTEME_SURESI;
     public static String ONAY_MENU_TITLE;
     public static boolean PLACEHOLDER_SUPPORT;
+    public static boolean MARKET;
     public static boolean MENU_KAPATMA;
     public static String AYRAC;
+    public static Boolean WORLD;
+    public static List<String> WORLDLIST;
     public static String CMD_NEW;
     public static String GONDER;
     public static String GIVEALL;
@@ -71,6 +76,8 @@ public class MessageUtil {
         CONSOLE_ERROR = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("CONSOLE_ERROR"));
         BUY_ERROR = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("BUY_ERROR"));
         FULL_INVENTORY = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("FULL_INVENTORY"));
+        MARKET_KAPALI = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("MARKET_KAPALI"));
+        WORLD_ERROR = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("WORLD_ERROR"));
         CREDI_ADDED_OTHER = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("CREDI_ADDED_OTHER"));
         SHOW_CREDIT = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("SHOW_CREDIT"));
         SHOW_CREDIT_SELF = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("SHOW_CREDIT_SELF"));
@@ -84,8 +91,11 @@ public class MessageUtil {
         PURGE_SUCCESS = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("PURGE_SUCCESS"));
         BUY_FROM_GUI = CustomAreaCoin.colorizeList(manager.config.getConfig().getStringList("BUY_FROM_GUI"));
         PLACEHOLDER_SUPPORT = manager.config.getConfig().getBoolean("PLACEHOLDER_SUPPORT");
+        MARKET = manager.config.getConfig().getBoolean("MARKET");
         MENU_KAPATMA = manager.config.getConfig().getBoolean("MENU_KAPATMA");
         AYRAC = manager.config.getConfig().getString("AYRAC");
+        WORLD = manager.config.getConfig().getBoolean("WORLDS.SYSTEM");
+        WORLDLIST = manager.config.getConfig().getStringList("WORLDS.LIST");
         INFO_LINE_1 = CustomAreaCoin.chatcolor(manager.config.getConfig().getString("INFO_LINE_1"));
         INFO_LINE_2 = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("INFO_LINE_2"));
         INFO_LINE_3 = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("INFO_LINE_3"));
