@@ -8,6 +8,7 @@ import me.t3sl4.cac.*;
 import me.t3sl4.cac.commands.MadenCoinCommands;
 import me.t3sl4.cac.commands.MadenCoinimCommand;
 import me.t3sl4.cac.commands.PreCommandListener;
+import me.t3sl4.cac.listeners.BaltaEvent;
 import me.t3sl4.cac.market.ClickEvent;
 import me.t3sl4.cac.mysql.MySQL;
 import me.t3sl4.cac.onay.Onay;
@@ -71,7 +72,7 @@ public class SettingsManager {
             MySQL.createTable();
         }
         registerCommands();
-        registerListener(new Listener[] { new PreCommandListener(), new ClickEvent() });
+        registerListener(new Listener[] { new PreCommandListener(), new ClickEvent(), new BaltaEvent()});
         MessageUtil.loadMessages();
     }
 

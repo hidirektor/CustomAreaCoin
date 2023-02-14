@@ -68,7 +68,7 @@ public class ClickEvent implements Listener {
                                             String[] enchantVal = enchant.split(":");
                                             String enchantName = enchantVal[0];
                                             int enchantVals = Integer.parseInt(enchantVal[1]);
-                                            verilecekItem.addEnchantment(Enchantment.getByName(enchantName), enchantVals);
+                                            verilecekItem.addUnsafeEnchantment(Enchantment.getByName(enchantName), enchantVals);
                                         }
                                     }
                                 }

@@ -83,7 +83,7 @@ public class MySQL {
         host = manager.config.getConfig().getString("MySQL.host");
         port = manager.config.getConfig().getString("MySQL.port");
         db = manager.config.getConfig().getString("MySQL.database");
-        db = manager.config.getConfig().getString("MySQL.tablename");
+        tablename = manager.config.getConfig().getString("MySQL.tablename");
         user = manager.config.getConfig().getString("MySQL.user");
         pw = manager.config.getConfig().getString("MySQL.password");
     }

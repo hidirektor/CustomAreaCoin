@@ -22,6 +22,9 @@ public class MessageUtil {
     public static String MARKET_KAPALI;
     public static String WORLD_ERROR;
     public static String MARKET_MENU_ERROR;
+    public static String BALTA_HATA;
+    public static String BALTA_KIRMA_HATA;
+    public static String HAVA_KOORDINAT;
     public static String SHOW_CREDIT;
     public static String SHOW_CREDIT_SELF;
     public static String NOT_ENOUGH_CREDIT;
@@ -44,6 +47,7 @@ public class MessageUtil {
     public static String INFO_LINE_8;
     public static String INFO_LINE_9;
     public static String INFO_LINE_10;
+    public static String INFO_LINE_11;
     public static String TEKSEFERLIK_KOMUT;
     public static int ONAY_ISTEME_SURESI;
     public static String ONAY_MENU_TITLE;
@@ -57,6 +61,15 @@ public class MessageUtil {
     public static String GONDER;
     public static String GIVEALL;
     public static String PURGE;
+    public static String EVENT;
+    public static String AXENAME;
+    public static List<String> AXELORE;
+    public static List<String> AXEENCHANT;
+    public static boolean AXEENCH;
+    public static boolean AXELOR;
+    public static List<String> EVENT_EXP;
+    public static String CONST_VAR_COORD;
+    public static String CONST_VAR_COMMA;
 
     public static ArrayList<OnayMenuItems> ITEMS = new ArrayList<>();
 
@@ -80,6 +93,9 @@ public class MessageUtil {
         MARKET_KAPALI = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("MARKET_KAPALI"));
         WORLD_ERROR = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("WORLD_ERROR"));
         MARKET_MENU_ERROR = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("MARKET_MENU_ERROR"));
+        BALTA_HATA = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("BALTA_HATA"));
+        BALTA_KIRMA_HATA = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("BALTA_KIRMA_HATA"));
+        HAVA_KOORDINAT = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("HAVA_KOORDINAT"));
         CREDI_ADDED_OTHER = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("CREDI_ADDED_OTHER"));
         SHOW_CREDIT = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("SHOW_CREDIT"));
         SHOW_CREDIT_SELF = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("SHOW_CREDIT_SELF"));
@@ -108,10 +124,21 @@ public class MessageUtil {
         INFO_LINE_8 = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("INFO_LINE_8"));
         INFO_LINE_9 = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("INFO_LINE_9"));
         INFO_LINE_10 = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("INFO_LINE_10"));
+        INFO_LINE_11 = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("INFO_LINE_11"));
         CMD_NEW = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("CMD_NEW"));
         GONDER = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("GONDER"));
         GIVEALL = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("GIVEALL"));
         PURGE = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("PURGE"));
+        EVENT = PREFIX + CustomAreaCoin.chatcolor(manager.config.getConfig().getString("EVENT"));
+        AXENAME = CustomAreaCoin.chatcolor(manager.config.getConfig().getString("AXE.Name"));
+        AXELORE = CustomAreaCoin.colorizeList(manager.config.getConfig().getStringList("AXE.Lore"));
+        AXEENCHANT = manager.config.getConfig().getStringList("AXE.Enchant");
+        AXELOR = manager.config.getConfig().getBoolean("AXE.Settings.Lore");
+        AXEENCH = manager.config.getConfig().getBoolean("AXE.Settings.Enchant");
+        EVENT_EXP = CustomAreaCoin.colorizeList(manager.config.getConfig().getStringList("EVENT_EXP"));
+        CONST_VAR_COORD = CustomAreaCoin.chatcolor(manager.config.getConfig().getString("CONST_VAR_COORD"));
+        CONST_VAR_COMMA = CustomAreaCoin.chatcolor(manager.config.getConfig().getString("CONST_VAR_COMMA"));
+
         ArrayList<OnayMenuItems> test = new ArrayList<>();
         ArrayList<Market> test2 = new ArrayList<>();
 

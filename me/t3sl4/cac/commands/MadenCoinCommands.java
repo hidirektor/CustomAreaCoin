@@ -13,12 +13,15 @@ import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 public class MadenCoinCommands implements CommandExecutor, Listener {
     SettingsManager manager = SettingsManager.getInstance();
@@ -37,6 +40,7 @@ public class MadenCoinCommands implements CommandExecutor, Listener {
                     sender.sendMessage(MessageUtil.INFO_LINE_8);
                     sender.sendMessage(MessageUtil.INFO_LINE_9);
                     sender.sendMessage(MessageUtil.INFO_LINE_10);
+                    sender.sendMessage(MessageUtil.INFO_LINE_11);
                 }
                 return true;
             }
@@ -47,7 +51,8 @@ public class MadenCoinCommands implements CommandExecutor, Listener {
                     !args[0].equalsIgnoreCase("gonder") &&
                     !args[0].equalsIgnoreCase("giveall") &&
                     !args[0].equalsIgnoreCase("purge") &&
-                    !args[0].equalsIgnoreCase("market")) {
+                    !args[0].equalsIgnoreCase("market") &&
+                    !args[0].equalsIgnoreCase("event")) {
                 Player target = Bukkit.getPlayer(args[0]);
                 if (target == null) {
                     sender.sendMessage(MessageUtil.PLAYER_NOT_FOUND.replaceAll("%player%", args[0]));
@@ -92,6 +97,61 @@ public class MadenCoinCommands implements CommandExecutor, Listener {
                     }
                 } else {
                     sender.sendMessage(MessageUtil.CONSOLE_ERROR);
+                }
+            }
+            if(args[0].equalsIgnoreCase("event")) {
+                if(args.length != 1) {
+                   sender.sendMessage(MessageUtil.EVENT);
+                } else {
+                    if(sender instanceof Player) {
+                        Player komutGonderen = (Player)sender;
+                        if(komutGonderen.isOp()) {
+                            int bosSlot = 0;
+                            ItemStack item = komutGonderen.getInventory().getItem(komutGonderen.getInventory().getHeldItemSlot());
+                            ItemStack eventBalta = new ItemStack(Material.WOOD_AXE);
+                            ItemMeta eventBaltaMeta = eventBalta.getItemMeta();
+                            eventBaltaMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+                            eventBaltaMeta.setDisplayName(MessageUtil.AXENAME);
+                            if(MessageUtil.AXELOR) {
+                                eventBaltaMeta.setLore(MessageUtil.AXELORE);
+                            }
+                            eventBalta.setItemMeta(eventBaltaMeta);
+                            if(MessageUtil.AXEENCH) {
+                                for(String enchant : MessageUtil.AXEENCHANT) {
+                                    if(enchant != null) {
+                                        String[] enchantVal = enchant.split(":");
+                                        String enchantName = enchantVal[0];
+                                        int enchantVals = Integer.parseInt(enchantVal[1]);
+                                        eventBalta.addUnsafeEnchantment(Enchantment.getByName(enchantName), enchantVals);
+                                    }
+                                }
+                            }
+
+                            if(item == null) {
+                                komutGonderen.getInventory().setItem(0, eventBalta);
+                                for(String expLine : MessageUtil.EVENT_EXP) {
+                                    komutGonderen.sendMessage(expLine.replaceAll("%ilkkoord%", MessageUtil.CONST_VAR_COMMA).replaceAll("%ikincikoord%", MessageUtil.CONST_VAR_COMMA));
+                                }
+                            } else {
+                                Inventory inv = komutGonderen.getInventory();
+                                for(ItemStack checkItem : inv.getContents()) {
+                                    if(checkItem != null) {
+                                        bosSlot++;
+                                    }
+                                }
+                                ItemStack firstItem = inv.getItem(0);
+                                komutGonderen.getInventory().setItem(bosSlot, firstItem);
+                                komutGonderen.getInventory().setItem(0, eventBalta);
+                                for(String expLine : MessageUtil.EVENT_EXP) {
+                                    komutGonderen.sendMessage(expLine.replaceAll("%ilkkoord%", " ").replaceAll("%ikincikoord%", " "));
+                                }
+                            }
+                        } else {
+                            komutGonderen.sendMessage(MessageUtil.NO_PERM_MESSAGE);
+                        }
+                    } else {
+                        sender.sendMessage(MessageUtil.CONSOLE_ERROR);
+                    }
                 }
             }
             if (args[0].equalsIgnoreCase("gonder")) {

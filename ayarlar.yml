@@ -66,12 +66,41 @@ FULL_INVENTORY: "&4Envanterin dolu olduğu için şuan marketten bir şey satın
 MARKET_KAPALI: "&4Maalesef market sistemimiz şuanda devre dışı !"
 WORLD_ERROR: "&4Maalesef bulunduğun dünya olan &d%dunya% &4dünyasında market sistemi kapalı."
 MARKET_MENU_ERROR: "&4Market menüsünde boyut ile alakalı bir hata var. Lütfen yetkiliye bildirin."
+BALTA_HATA: "&4Event alanı ayarlama baltasını yere atamazsın."
+BALTA_KIRMA_HATA: "&4Event alanı ayarlama baltası ile blok kıramazsın."
+HAVA_KOORDINAT: "&4Havanın koordinatını alamazsın."
 
 TEKSEFERLIK_KOMUT: '&4Tek seferlik bir komutu tekrar kullanamazsın!'
 CMD_NEW: "/madencoin yeni <komut ismi> <fiyat> <komut>"
 GONDER: "/madencoin gonder <Oyuncu> <Miktar>"
 GIVEALL: "/madencoin giveall <Miktar>"
 PURGE: "/madencoin purge"
+EVENT: "/madencoin event"
+
+########################################
+#     Event Baltası / EVENT AXE        #
+########################################
+AXE:
+  Settings:
+    Enchant: false
+    Lore: false
+  Name: "&6Event Baltası"
+  Lore:
+    - 'Açıklama #1'
+  Enchant:
+    - ''
+
+########################################
+#     Event Açıklama / EVENT EXP       #
+########################################
+EVENT_EXP:
+  - '&7-------------'
+  - '&7İlk Koordinat: &e%ilkkoord%'
+  - '&7İkinci Koordinat: &e%ikincikoord%'
+  - '&7-------------'
+CONST_VAR_COORD: "&eX: &a%x_coord%&7, &eX: &a%y_coord%&7, &eX: &a%z_coord%"
+CONST_VAR_COMMA: "&eBekleniyor..."
+
 
 ########################################
 #     Bilgi Yazıları / INFO LINES      #
@@ -85,7 +114,8 @@ INFO_LINE_6: "&7/madencoin [+/-] <İsim> <Miktar> &e» &aSeçilen Oyuncuya Maden
 INFO_LINE_7: "&7/madencoin yeni '/Girilen Komut' <Miktar> '/Gerçek Komut' &e» &aYeni Komut Oluşturmanızı Sağlar "
 INFO_LINE_8: "&7/madencoin giveall <Miktar> &e» &aSunucuda aktif olan tüm oyunculara coin verir."
 INFO_LINE_9: "&7/madencoin purge &e» &aTüm MadenCoinleri sıfırlar."
-INFO_LINE_10: "&7/madencoin reload &e» &aKredi Pluginini Yeniler"
+INFO_LINE_10: "&7/madencoin event &e» &aMadenCoin event alanını ayarlar."
+INFO_LINE_11: "&7/madencoin reload &e» &aKredi Pluginini Yeniler"
 
 ########################################
 #    MySQL Ayarları / MySQL Settings   #
